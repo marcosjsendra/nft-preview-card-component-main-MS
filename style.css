@@ -1,0 +1,202 @@
+/* Boilderplate */
+
+html {
+  font-size: 62.5%;
+  font-family: "Outfit", sans-serif;
+}
+
+/* Resets */
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none !important;
+}
+
+/* Variables */
+
+:root {
+  /* Primarios */
+  --soft-blue: hsl(215, 51%, 70%);
+  --cyan: hsl(178, 100%, 50%);
+  /* Neutrales */
+  --vr-bg: hsl(217, 54%, 11%);
+  --vr-card: hsl(216, 50%, 16%);
+  --vr-line: hsl(215, 32%, 27%);
+  --white: hsl(0, 0%, 100%);
+  --black: hsl(0, 0, 0%);
+  /* Shadow */
+  --l-shadow: hsl(215, 60%, 11%);
+  --d-shadow: hsl(217, 55%, 10%);
+}
+
+/* Layout */
+
+/* NFT Item propeties */
+
+/* 1. NFT Item image */
+
+body {
+  background-color: var(--vr-bg);
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  /* width: 35rem; */
+  width: clamp(32.5rem, 90%, 35rem);
+  margin: 15rem auto;
+  margin-top: clamp(6rem, 10vw, 15rem);
+  padding: 2.5rem;
+  border-radius: 1.5rem;
+  background-color: var(--vr-card);
+  box-shadow: 0 3rem 1.6rem var(--d-shadow), 2rem 4rem 1.6rem var(--d-shadow),
+    -2rem 4rem 1.6rem var(--d-shadow), 0 -2rem 1.6rem var(--l-shadow),
+    4rem -2rem 1.6rem var(--l-shadow), -4rem -2rem 1.6rem var(--l-shadow),
+    0 8rem 1.6rem var(--l-shadow), 4rem 8rem 1.6rem var(--l-shadow),
+    -4rem 8rem 1.6rem var(--l-shadow);
+}
+
+.item_container {
+  align-self: center;
+  position: relative;
+  width: 30rem;
+}
+
+.item_img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 1rem;
+}
+
+.item_overlay {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: 0.5s ease;
+  background-color: var(--cyan);
+  border-radius: 1rem;
+  z-index: 0;
+}
+
+.item_container:hover .item_overlay {
+  opacity: 0.5;
+}
+
+.eye_icon_overlay {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: 0.5s ease;
+  background: url("./images/icon-view.svg") no-repeat center;
+  z-index: 10;
+}
+
+.item_container:hover .eye_icon_overlay {
+  opacity: 1;
+}
+
+/* 2. NFT Item title */
+
+.image_title {
+  margin-top: 2.7rem;
+  font-size: 2.2rem;
+  color: var(--white);
+}
+
+.image_title:hover {
+  color: var(--cyan);
+}
+
+/* 3. NFT Item description */
+
+.card_text {
+  margin-top: 2rem;
+  font-size: 1.8rem;
+  font-weight: 300;
+  color: var(--soft-blue);
+}
+
+.item_info {
+  margin-top: 3rem;
+  margin-bottom: 1.5rem;
+  padding-bottom: 2.5rem;
+  border-bottom: 1px solid var(--vr-line);
+  display: flex;
+  justify-content: space-between;
+}
+
+.item_info > div {
+  display: flex;
+  align-items: center;
+  font-size: 1.6rem;
+}
+
+.item_info > div > img {
+  margin-right: 0.7rem;
+}
+
+.item_price > p {
+  font-weight: 600;
+  color: var(--cyan);
+}
+
+.item_time > p {
+  color: var(--soft-blue);
+}
+
+/* 4. NFT Item author */
+
+.creator_container {
+  display: flex;
+  align-items: center;
+}
+
+.creator_container > img {
+  width: 3.3rem;
+  margin-right: 1.7rem;
+  border: 1px solid var(--white);
+  border-radius: 50%;
+}
+
+.creator_container > figcaption {
+  font-size: 1.6rem;
+  font-weight: 300;
+  color: var(--soft-blue);
+}
+
+.creator_container > figcaption > a {
+  color: var(--white) !important;
+}
+
+.creator_container > figcaption > a:hover {
+  color: var(--cyan) !important;
+}
+
+/* 5. Footer */
+
+.attribution {
+  padding: 1.2rem;
+  font-size: 1.25rem;
+  color: var(--soft-blue);
+  text-align: center;
+}
+
+.attribution > a {
+  color: var(--white) !important;
+}
+
+.attribution > a:hover {
+  color: var(--cyan) !important;
+}
